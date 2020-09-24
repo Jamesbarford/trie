@@ -1,0 +1,6 @@
+/nodemon.json
+node_modules
+.idea
+test.ts
+dist
+.DS_Store

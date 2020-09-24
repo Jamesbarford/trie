@@ -1,0 +1,27 @@
+{
+  "name": "trie",
+  "version": "0.0.4",
+  "description": "A JavaScript implementation of a Trie",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "keywords": [
+    "Trie",
+    "Prefix tree",
+    "Predictive",
+    "Spelling"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jamesbarford/trie.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "James Barford-Evans",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^14.0.27",
+    "typescript": "^4.0.3"
+  },
+  "dependencies": {}
+}
