@@ -7,7 +7,7 @@ The Trie can either be created string by string or from an array of strings.
 ## Example
 
 ```typescript
-import { Trie } from "trie";
+import { Trie } from "trie-structure";
 
 const trie = new Trie();
 const strings = ["he", "hello", "helios", "woof", "dog", "doom"];
@@ -50,6 +50,6 @@ class TrieNode {
   public isLeaf: boolean; // defaults to false
   public readonly children: Map<string, TrieNode>; // defaults to an empty map
 
-  public constructor(public readonly key: string) {}
+  public constructor(public readonly char: string) {}
 }
 ```
