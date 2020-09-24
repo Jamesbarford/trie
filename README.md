@@ -4,6 +4,20 @@ An implementation of a [Trie](https://en.wikipedia.org/wiki/Trie)
 
 The Trie can either be created string by string or from an array of strings.
 
+## Example
+
+```typescript
+import { Trie } from "trie";
+
+const trie = new Trie();
+const strings = ["he", "hello", "helios", "woof", "dog", "doom"];
+
+trie.addMany(strings);
+
+const allWords = trie.getAllWords(); // => ["he", "hello", "helios", "woof", "dog", "doom"]
+const helPrefixedWords = trie.findWords("he"); // => ["hello", "helios"];
+```
+
 ## Usage
 
 public methods:
@@ -25,21 +39,17 @@ class Trie {
 
   public contains(word: string): boolean; // returns true if the given string exists within the tree, may not be a full word
 
-  public findNode(prefix: string): boolean; // returns first match
+  public findNode(prefix: string): TrieNode | undefined; // returns first match
 }
-
 ```
 
-## Example
+The items in the `Trie` are stored as `TrieNodes` these should not need to be directly referenced
 
-```typescript
-import { Trie } from "trie";
+```ts
+class TrieNode {
+  public isLeaf: boolean; // defaults to false
+  public readonly children: Map<string, TrieNode>; // defaults to an empty map
 
-const trie = new Trie();
-const strings = ["he", "hello", "helios", "woof", "dog", "doom"];
-
-trie.addMany(strings);
-
-const allWords = trie.getAllWords(); // => ["he", "hello", "helios", "woof", "dog", "doom"]
-const helPrefixedWords = trie.findWords("he"); // => ["hello", "helios"];
+  public constructor(public readonly key: string) {}
+}
 ```

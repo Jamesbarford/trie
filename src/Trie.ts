@@ -55,7 +55,7 @@ export class Trie {
             const node: TrieNode | undefined = currentNode.children.get(char);
 
             if (node) {
-                currentWord += node.key;
+                currentWord += node.char;
                 currentNode = node;
             } else {
                 return true;
@@ -66,7 +66,7 @@ export class Trie {
     }
 
     private _findWords(node: TrieNode, currentWord: string = "", words: string[] = []): string[] {
-        currentWord += node.key;
+        currentWord += node.char;
 
         if (node.isLeaf) words.push(currentWord);
 
@@ -109,7 +109,7 @@ export class TrieNode {
     public isLeaf: boolean = false;
     public readonly children: Map<string, TrieNode> = new Map();
 
-    public constructor(public readonly key: string) {}
+    public constructor(public readonly char: string) {}
 }
 
 function forEachChar(str: string | number, cb: (char: string, idx: number) => boolean | void): void {

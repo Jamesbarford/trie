@@ -1,3 +1,3 @@
-import { Trie, TrieNode } from "./Trie"
+import { Trie, TrieNode } from "./Trie";
 
-export {Trie, TrieNode}
+export { Trie, TrieNode };
